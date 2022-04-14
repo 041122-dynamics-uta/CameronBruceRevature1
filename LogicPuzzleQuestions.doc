@@ -1,0 +1,63 @@
+Summer Camp
+
+Abigail, Oliver, Rosa, and Blake all attend the same summer camp, where they can cook, kayak, rock climb, and zip-line. Each child has a different favorite activity.
+Abigail’s favorite activity isn’t rock climbing.
+Oliver is afraid of heights.
+Rosa can’t do her favorite activity without a harness.
+Blake likes to keep his feet on the ground at all times.
+Can you figure out who likes what?
+
+	Abigail	Oliver	Rosa	Blake
+cook	o	o	o	x
+kayak	o	x	o	o
+rock climb	o	o	x	o
+zip-line	x	o	o	o
+
+The Good Life
+
+Each of five neighborhood dogs (Saber, Ginger, Nutmeg, Pepper, and Bear) is enjoying one of the following activities: getting its ears scratched, playing catch, taking a nap, burying a chew toy, and going for a walk.
+Pepper is either playing catch or burying a chew toy.
+Neither Ginger nor Saber nor Bear is on a walk.
+One of the dogs named after a spice is getting its ears scratched.
+A dog not named for a spice is playing catch.
+Bear is getting some exercise.
+Can you figure out what each pooch is doing?
+
+	Saber	Ginger	Nutmeg	Pepper	Bear
+ears scratched	o	x	o	o	o
+playing catch	o	o	o	o	x
+taking a nap	x	o	o	o	o
+burying a chew toy	o	o	o	x	o
+going for a walk	o	o	x	o	o
+
+
+
+
+
+
+
+
+Presidents Day.
+
+George, William, John, Abe, and Millard have their birthdays on consecutive days, all between Monday and Friday.
+•	George’s birthday is as many days before Millard’s and William’s is after Abe’s.
+•	John is two days older than Abe.
+•	Millard’s birthday is on Thursday.
+Can you figure out whose birthday is on each day?
+
+	Monday	Tuesday	Wednesday	Thursday	Friday
+George	o	o	o	o	X Week Before
+William	o	x	o	o	o
+John	o	o	x	o	o
+Abe	x	o	o	o	o
+Millard	o	o	o	x	o
+
+The long and the Short of it.
+Here’s a great logic puzzle for kids: Six neighborhood children (Leisha, Benito, Delia, Charlotte, Weldon, and Zina) were measured yesterday.
+•	Weldon is taller than Delia but shorter than Zina.
+•	Leisha is taller than Benito but shorter than Delia and Weldon.
+•	Benito is not the shortest.
+Can you put them in order of height from tallest to shortest?
+Child	Leisha	Benito	Delia	Charlotte	Weldon	Zina
+Order	4	5	3	6	2	1
+
