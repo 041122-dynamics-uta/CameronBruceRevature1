@@ -1,46 +1,62 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace W4DataStructures
+namespace switchCase
 {
-
     
-    class Program
+    
+    
+    public class switchCase
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Make Your Choice In the Switch Case");
-            Console.WriteLine("1, 2, or 3");
-
-            int red = 1
-            int blue = 2
-            int green = 3
-            string forCase = Console.ReadLine();
-
+        
+        
+        
+        public static void Main(string[] args)
+        { 
             
-            switch (forCase) 
+            // string outputs
+            Console.WriteLine("Greetings User, Welcome To My Switch Case Tuitorial");
+            Console.WriteLine("Please Select A Number 1 to 3"); // Can add more cases to 
+            
+            //declare Variable and get user input
+            int answer = Console.ReadLine();
+
+            Console.WriteLine("Your Selection is " answer);
+
+            // to Innitiate the switch
+            switch (answer)
             {
+                //The Cases and Default
+               
                 case 1:
-                Console.WriteLine("I can do this");
-                break;
+                Console.WriteLine("You are an awesome individual");
+                break; // breakpoint tells compiler to exit this method instead of reading the other cases.
+
                 case 2:
-                Console.WriteLine("have a great day");
-                break;
-                case 3:
-                Console.WriteLine("Smile more");
+                Console.WriteLine("Please Enter two variables");
+                //calling for more variables and preform on the fly calculations.
+                int var1 = Console.ReadLine();
+                int var2 = Console.ReadLine();
+
+                Console.WriteLine("Your two numbers are " var1 " and " var2);
                 break;
                 
-                default:
-                Console.WriteLine("Choose the Right number");
-                int forCase = Console.ReadLine();
+                case 3:
+                Console.WriteLine("You Shall Bring Me A Shrubbery");
                 break;
+                
+                Default:
+                Console.WriteLine("Its Just a Flesh Wound");
+                break;
+  
             }
-            
-            Console.ReadKey();
+
 
         }
+
+            Console.ReadKey();
+
     }
 }
+
+
+
