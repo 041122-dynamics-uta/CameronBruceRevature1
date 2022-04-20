@@ -33,7 +33,9 @@ namespace switchCase
 
                 case 2:
                 Console.WriteLine("Please Enter two variables");
-                //calling for more variables and preform on the fly calculations.
+                
+                //calling for more variables and preform on the fly calculations. unable to pass results outside the case.
+                
                 int var1 = Console.ReadLine();
                 int var2 = Console.ReadLine();
 
