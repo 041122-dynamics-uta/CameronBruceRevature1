@@ -1,130 +1,87 @@
 #!/bin/bash
-input="yes"
-while [[ $input = "yes" ]]
-do
+
+# Function Call
 consoleMenu () {
-    echo Press A Number: 1 For Addition, 2 For Subtraction, 3 For Multiplication and 4 For Division: 
+    echo Press A Number: 1 For Addition, 2 For Subtraction, 3 For Multiplication and 4 For Division 5 For Exit: 
 }
-consoleMenu
-    #PS3="Press 1 for Addition, 2 for subtraction, 3 for multiplication and 4 for division: "
-    select math in Addition Subtraction Multiplication Division
-    do
-        case "$math" in
-        Addition)
-            echo "Enter first no:"
-            read num1
-            echo "Enter second no:"
-            read num2
-            result=`expr $num1 + $num2`
-            echo Answer: $result
-            break
-        ;;
-        Subtraction)
-            echo "Enter first no:"
-            read num1
-            echo "Enter second no:"
-            read num2
-            result=`expr $num1 - $num2`
-            echo Answer: $result
-            break
-        ;;
-        Multiplication)
-            echo "Enter first no:"
-            read num1
-            echo "Enter second no:"
-            read num2
-            result=`expr $num1 * $num2`
-            echo Answer: $result
-            break
-        ;;
-        Division)
-            echo "Enter first no:"
-            read num1
-            echo "Enter second no:"
-            read num2
-            result=$(expr "scale=2; $num1/$num2" | bc)
-            echo Answer = $result
-            break
-        ;;
-        #Exit)
-        *)
-            echo Choose 1 to 4 only!!!!
-            break
-        ;;
-    esac
+
+#Basic input and output
+    echo Enter your name 
+    read name
+    echo Welcome $name
+
+# Initiate the While Loop
+    input="yes"
+        while [[ $input = "yes" ]]
+        do
+
+
+#output Function Call
+        consoleMenu
+    
+    #Call the Switch with the variables
+            select math in Addition Subtraction Multiplication Division Exit
+            do
+
+            #The Case 
+                case "$math" in
+                Addition)
+
+                #Enter Numbers
+                    echo "Enter first Addend:"
+                    read num1
+                    echo "Enter second Addend:"
+                    read num2
+
+                    #Calculate numbers and output
+                    result=$(( $num1 + $num2 ))
+                    echo The Sum of Your Numbers Are: $result
+
+                    #Exits the individual case statement
+                    break
+
+
+                ;; 
+#Make all other case statements the same as first one and add the name in the select statement
+
+                Subtraction)
+                    echo "Enter the Minuend:"
+                    read num1
+                    echo "Enter the Subtrahend:"
+                    read num2
+                    result=$(( $num1 - $num2 ))
+                    echo The Difference of Your Numbers Are: $result
+                    break
+                ;;
+                Multiplication)
+                    echo "Enter the Multiplier:"
+                    read num1
+                    echo "Enter the Multiplihend:"
+                    read num2
+                    result=$(( $num1 * $num2 )) 
+                    echo The Product of Your Numbers Are: $result
+                    break
+                ;;
+                Division)
+                    echo "Enter the Dividend:"
+                    read num1
+                    echo "Enter the Divisor:"
+                    read num2
+                    result=$(( $num1 / $num2 ))
+                    echo The Quotient of Your Numbers Are = $result
+                    break
+                ;;
+                Exit)
+                #Exits the Program
+                    input="no"
+                    break
+                ;;
+                *)
+                #keeps the loop from throwing error if switch selection is greater than 5 or any other key stroke
+                    echo Choose 1 to 5 only!!!!
+                    break
+                ;;
+            esac
     done
 
 done
-#echo  Enter Numbers For Calculation 
-
-             #read $a
-           #  read $b
-#Add() {  
-       # var1=$(($a+$b))
-   # echo $var1 
-
-#}
-#Add 
-#Assigning the output of function Add to another variable 'var2'.
-#var2=$var1
-#echo $var2
-#Subtract () { local result = $(($int1 - $int2)) echo "$result" }
-#Multiply () { local result = $(($int1 \* $int2)) echo "$result" }
-#Divide () { local result = $(($int1 / $int2)) echo "$result" } 
-
-
-#result = Add $int1 $int2
-#echo The sum is: $result
-#echo Welcome User Would You Like To Preform Some Calculations 
-
-
-
-    #while true
-
-        #do
-
-        # echo Select Calculation Type \n
-        # echo 1	Add \n
-        # echo 2	Subtract \n
-        # echo 3	Multiply \n
-        # echo 4	Divide \n 
-        # echo 0  Exit 
-
-        #read selectType
-
-            # if [ $selectType -le 4 ];
-
-            # then 
-
-            # 
-
-            # case $selectType in 
-
-            # 1) echo  Press Enter For Result 
-            #     read
-            #     echo  The Sum of $int1 and $int2 is  Add
-            #     ;;
-
-            # 2) echo  Press Enter For Result
-            #     read
-            #     echo  The Difference of $int1 and $int2 is  Subtract
-            #     ;;
-
-            # 3) echo  Press Enter For Result 
-            #     read
-            #     echo  The Product of $int1 and $int2 is  Multiply
-            #     ;;
-
-            # 4) if [ $int2 -eq 0 ] 
-            #     then
-            #     echo  Unable to Preform Calculation Divisor cannot be 0 
-            #     else 
-            #     echo  Press Enter For Result 
-            #     read
-            #     echo  The Quotient of $int1 and $int2 is  Divide
-            #     ;;
-
-            #esac
-
-#done
-#fi
