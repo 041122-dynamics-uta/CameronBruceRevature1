@@ -64,11 +64,7 @@ getEscape () {
     echo Run Away
     input="no"
 }
-
-#Call Function to Get Name
-
-    getName
-
+getCalculator () {
 # Initiate the While Loop
 
     input="yes"
@@ -135,3 +131,11 @@ getEscape () {
     done
 
 done
+}
+#Call Function to Get Name
+
+    getName
+
+#Call Function to Get Calculator
+    getCalculator
+
