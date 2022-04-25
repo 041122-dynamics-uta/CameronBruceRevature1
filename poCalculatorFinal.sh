@@ -1,87 +1,147 @@
 #!/bin/bash
 
-# Function Call
-consoleMenu () {
-    echo Press A Number: 1 For Addition, 2 For Subtraction, 3 For Multiplication and 4 For Division 5 For Exit: 
-}
-
+# Function Calls
+getName () {
 #Basic input and output
     echo Enter your name 
     read name
     echo Welcome $name
+}
+consoleMenu () {
+#Gives The Question for Calculation Selection
+    echo Press A Number: 1 For Addition, 2 For Subtraction, 3 For Multiplication and 4 For Division 5 For Exit: 
+}
 
+Addition () {
+#Enter Numbers
+    echo "Enter first Addend:"
+    read num1
+    echo "Enter second Addend:"
+    read num2
+
+#Calculate numbers and output
+    result=$(( $num1 + $num2 ))
+    echo The Sum of Your Numbers Are: $result
+}
+
+Subtraction () {
+#Gets Inputs
+    echo "Enter the Minuend:"
+    read num1
+    echo "Enter the Subtrahend:"
+    read num2
+
+#Calculates the Number
+    result=$(( $num1 - $num2 ))
+    echo The Difference of Your Numbers Are: $result
+}
+
+Multiplication () {
+#Gets Inputs
+    echo "Enter the Multiplier:"
+    read num1
+    echo "Enter the Multiplihend:"
+    read num2
+
+#Calculates the Numbers and outputs
+    result=$(( $num1 * $num2 )) 
+    echo The Product of Your Numbers Are: $result
+}
+
+Division () {
+#Gets Inputs
+    echo "Enter the Dividend:"
+    read num1
+    echo "Enter the Divisor:"
+    read num2
+
+#Calculates the Numbers and Outputs 
+    result=$(( $num1 / $num2 ))
+    echo The Quotient of Your Numbers Are = $result
+}
+
+getEscape () {
+    echo Run Away
+    input="no"
+}
+getCalculator () {
 # Initiate the While Loop
+
     input="yes"
         while [[ $input = "yes" ]]
         do
 
 
-#output Function Call
-        consoleMenu
+#Call Function to call for Calculation Selection
+
+    consoleMenu
     
-    #Call the Switch with the variables
+#Call the Switch with the variables
+
             select math in Addition Subtraction Multiplication Division Exit
             do
 
-            #The Case 
+#The Case
+
                 case "$math" in
                 Addition)
 
-                #Enter Numbers
-                    echo "Enter first Addend:"
-                    read num1
-                    echo "Enter second Addend:"
-                    read num2
+#Call Addition Function
+#Make all other case statements the same as this one and add the selection in the Select command
 
-                    #Calculate numbers and output
-                    result=$(( $num1 + $num2 ))
-                    echo The Sum of Your Numbers Are: $result
-
-                    #Exits the individual case statement
+                    Addition
                     break
-
-
-                ;; 
-#Make all other case statements the same as first one and add the name in the select statement
+                    ;; 
 
                 Subtraction)
-                    echo "Enter the Minuend:"
-                    read num1
-                    echo "Enter the Subtrahend:"
-                    read num2
-                    result=$(( $num1 - $num2 ))
-                    echo The Difference of Your Numbers Are: $result
+
+#Call Subtraction Function
+
+                    Subtraction
                     break
-                ;;
+                    ;;
+                
                 Multiplication)
-                    echo "Enter the Multiplier:"
-                    read num1
-                    echo "Enter the Multiplihend:"
-                    read num2
-                    result=$(( $num1 * $num2 )) 
-                    echo The Product of Your Numbers Are: $result
+
+#Call Multiplication Function
+
+                    Multiplication
                     break
-                ;;
+                    ;;
                 Division)
-                    echo "Enter the Dividend:"
-                    read num1
-                    echo "Enter the Divisor:"
-                    read num2
-                    result=$(( $num1 / $num2 ))
-                    echo The Quotient of Your Numbers Are = $result
+
+#Call Division Function
+
+                    Division
                     break
-                ;;
+                    ;;
                 Exit)
-                #Exits the Program
-                    input="no"
+#Exits the Program
+
+                    getEscape
                     break
-                ;;
+                    ;;
                 *)
-                #keeps the loop from throwing error if switch selection is greater than 5 or any other key stroke
+#keeps the loop from throwing error if switch selection is greater than 5 or any other key stroke
+
                     echo Choose 1 to 5 only!!!!
                     break
-                ;;
+                    ;;
             esac
     done
 
 done
+}
+
+getMainFunction () {
+#Call Function to Get Name
+
+    getName
+
+#Call Function to Get Calculator
+    getCalculator
+
+}
+
+#Final Call for Whole set
+getMainFunction
