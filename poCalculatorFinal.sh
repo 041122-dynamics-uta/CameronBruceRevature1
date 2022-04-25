@@ -132,6 +132,8 @@ getCalculator () {
 
 done
 }
+
+getMainFunction () {
 #Call Function to Get Name
 
     getName
@@ -139,3 +141,6 @@ done
 #Call Function to Get Calculator
     getCalculator
 
+}
+
+getMainFunction
