@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
 namespace _11_ArraysAndListsChallenge
 {
     public class Program
@@ -22,11 +23,11 @@ namespace _11_ArraysAndListsChallenge
             double sum = 0.0;
             double avg = 0.0;
             
-            for(int i = 0; i < array.Length; i++)
-            {
-                sum += array [i];
-            }
-            avg / array.Length;
+                for(int i = 0; i < array.Length; i++)
+                {
+                    sum += array [i];
+                }
+            avg = sum / array.Length;
             return avg;
         }
 
@@ -38,7 +39,6 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static int[] SunIsShining(int[] x)
         {
-            
             for (var i = 0; i < x.Length; i++)
             {
                 x[i] +=2;
@@ -55,19 +55,27 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static decimal ArrayListAvg(ArrayList myArrayList)
         {
-            //throw new NotImplementedException("ArrayListAvg has not been implemented yet.");
             double sum = 0;
-            int validElement = 0;
-            for (int i = 0; i < myArrayList.count ; i++)
-            {
-                if (myArrayList.GetType() = Int32 || myArrayList.GetType() = Double)
-                {
-                    sum += array [i]
-                    validElement++
-                }
+            int validElement = 0;           
+            for (int i = 0; i < myArrayList.Count ; i++)
+            {            
+               switch (myArrayList[i])
+               {
+                    case int x:
+                   sum += Convert.ToDouble(myArrayList[i]);
+                    validElement++;
+                       break;
+                    case double x:
+                    sum += Convert.ToDouble(myArrayList[i]);
+                    validElement++;
+                    break;
+                   default:
+                       break;
+               }                
             }
-
-
+            decimal avg = Convert.ToDecimal (sum / validElement);
+            avg = Math.Round(avg, 3);
+            return avg;
         }
 
         /// <summary>
@@ -77,7 +85,15 @@ namespace _11_ArraysAndListsChallenge
         /// <param name="myArray1"></param>
         public static int ListAscendingOrder(List<int> scores, int yourScore)
         {
-            throw new NotImplementedException("ListAscendingOrder has not been implemented yet.");
+             int betterThan = 0;
+             for (int i = 0; i < scores.Count; i++)
+             {
+                 if (yourScore > scores[i])
+                 {
+                     betterThan++;
+                 }
+             }
+            return betterThan +1;
         }
 
         /// <summary>
@@ -89,7 +105,14 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static bool FindStringInList(List<string> myArray2, string word)
         {
-            throw new NotImplementedException("FindStringInList has not been implemented yet.");
+            for (int i = 0; i < myArray2.Count; i++)
+            {
+                if (myArray2[i] == word)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }//EoP
 }// EoN
