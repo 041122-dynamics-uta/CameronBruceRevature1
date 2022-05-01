@@ -1,0 +1,12 @@
+Logic Puzzle 4
+The long and the Short of it.
+Here’s a great logic puzzle for kids: Six neighborhood children (Leisha, Benito, Delia, Charlotte, Weldon, and Zina) were measured yesterday.
+•	Weldon is taller than Delia but shorter than Zina.
+•	Leisha is taller than Benito but shorter than Delia and Weldon.
+•	Benito is not the shortest.
+Can you put them in order of height from tallest to shortest?
+Child	Leisha	Benito	Delia	Charlotte	Weldon	Zina
+Order	4	5	3	6	2	1
+
+In this puzzle I focused on the third parameter first that Benito was not the shortest so I preemptively placed him as the second shortest. The second parameter made me put Leisha in the 4th spot because she was taller than Benito but shorter than Delia and Weldon. The First parameter stated that Weldon is shorter than Zina but taller than Delia which created this pattern. Zina first, Weldon second, Delia third, Leisha fourth, Benito fifth, and Charlotte gets the bottom spot because she is not mentioned at all for being the shortest.  
+

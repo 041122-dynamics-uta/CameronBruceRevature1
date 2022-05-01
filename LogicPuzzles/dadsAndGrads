@@ -1,0 +1,13 @@
+Logic Puzzle 5
+Dads and Grads
+A joint Father’s Day and graduation party is being thrown for Michael, Ken, James, Alberto, Elias, and Stephanie. Three of them are newly minted high school graduates. The other three are their dads.
+•	Stephanie went to the senior prom with Michael’s son.
+•	Elias and James played on the school’s baseball team. One of them is Alberto’s son.
+•	Michael and Elias are not related.
+Can you match the high school graduates to their fathers at this joint celebration?
+	Michael	Ken	James	Alberto	Elias	Stephanie
+Dads	x	x	o	x	o	o
+Grad	o	o	x	o	x	x
+
+Ok, so for the first picks from the parameters is from the second line that Elias and James are grads since they played on the basketball team. The second line signifies that Alberto is a Dad. The First line states that Michael is a Dad, and that Stephanie is a student due to going to prom with Michael’s son. Since Ken is the only one not mentioned and all the student slots are filled.
+
