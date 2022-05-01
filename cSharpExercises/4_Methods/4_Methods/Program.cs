@@ -13,7 +13,7 @@ namespace _4_MethodsChallenge
 
         public static string GetName()
         {
-            throw new NotImplementedException("GetName() is not implemented yet0");
+            Console.
         }
 
         public static string GreetFriend(string name)
