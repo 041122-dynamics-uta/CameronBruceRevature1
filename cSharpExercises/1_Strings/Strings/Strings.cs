@@ -22,7 +22,8 @@ namespace StringManipulationChallenge
         /// <returns></returns>
         public static string StringToUpper(string usersString)
         {
-            throw new NotImplementedException("StringToUpper method not implemented.");
+            string x = usersString.ToUpper();
+            return x;
         }
 
         /// <summary>
@@ -34,7 +35,8 @@ namespace StringManipulationChallenge
         /// <returns></returns>       
         public static string StringToLower(string usersString)
         {
-            throw new NotImplementedException("StringToUpper method not implemented.");
+            string x = usersString.ToLower();
+            return x;
         }
 
         /// <summary>
@@ -47,7 +49,8 @@ namespace StringManipulationChallenge
         /// <returns></returns>
         public static string StringTrim(string usersStringWithWhiteSpace)
         {
-            throw new NotImplementedException("StringTrim method not implemented.");
+            string x = usersStringWithWhiteSpace.Trim();
+            return x;
         }
 
         /// <summary>
@@ -62,7 +65,8 @@ namespace StringManipulationChallenge
         /// <returns></returns>
         public static string StringSubstring(string x, int firstElement, int lengthOfSubsring)
         {
-            throw new NotImplementedException("StringSubstring method not implemented.");
+            string str = x.Substring(firstElement, lengthOfSubsring);
+            return str;
         }
 
         /// <summary>
@@ -77,7 +81,7 @@ namespace StringManipulationChallenge
         /// <returns></returns>
         public static int SearchChar(string userInputString, char charUserWants)
         {
-            throw new NotImplementedException("SearchChar method not implemented.");
+             return userInputString.IndexOf(charUserWants);
         }
 
         /// <summary>
@@ -92,7 +96,9 @@ namespace StringManipulationChallenge
         /// <returns></returns>
         public static string ConcatNames(string fName, string lName)
         {
-            throw new NotImplementedException("ConcatNames method not implemented.");
+           String strToReturn = "";
+			strToReturn = String.Concat(fName, " ", lName);
+			return strToReturn; 
         }
     }//end of program
 }

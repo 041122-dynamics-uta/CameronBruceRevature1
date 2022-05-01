@@ -62,15 +62,15 @@ namespace _11_ArraysAndListsChallenge
                switch (myArrayList[i])
                {
                     case int x:
-                   sum += Convert.ToDouble(myArrayList[i]);
+                    sum += Convert.ToDouble(myArrayList[i]);
                     validElement++;
-                       break;
+                        break;
                     case double x:
                     sum += Convert.ToDouble(myArrayList[i]);
                     validElement++;
-                    break;
-                   default:
-                       break;
+                        break;
+                    default:
+                        break;
                }                
             }
             decimal avg = Convert.ToDecimal (sum / validElement);
