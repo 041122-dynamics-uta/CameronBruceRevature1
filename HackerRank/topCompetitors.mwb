@@ -1,0 +1,7 @@
+Select h.hacker_id,h.name From hackers h,challenges c ,difficulty d,submissions s 
+Where h.hacker_id=s.hacker_id
+And c.challenge_id=s.challenge_id
+And c.difficulty_level=d.difficulty_level
+And s.score=d.score
+Group By h.hacker_id,h.name Having Count(h.hacker_id)>1
+Order By Count(c.challenge_id) Desc, h.hacker_id
