@@ -12,7 +12,7 @@ public class Member // Customer -- everything belo wis in Customer Table
     public int Phone {get; set;}
     public string Email {get; set;}
    // public Guid PassWordId {get; set;}
-    public string PassWord {get; set;}
+    public string Secret {get; set;}
     //public Guid StoreID {get; set;}
 
 
