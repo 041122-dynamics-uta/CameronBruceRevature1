@@ -1,0 +1,5 @@
+#1/bin/bash
+$ array=("10 5 7 3 9 2 6 1 4 ")
+$ IFS=$'\n' sorted=($(sort <<<"${array[*]}")); unset IFS
+$ printf "[%s]\n" "${sorted[@]}"
+
