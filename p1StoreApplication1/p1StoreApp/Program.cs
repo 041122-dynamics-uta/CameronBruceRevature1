@@ -25,8 +25,7 @@ namespace p1StoreApplication1
             Console.WriteLine("Enter Your Secret Identifier");
             string MySecret = Console.ReadLine();
 
-            //setup credential verification to utilize found verification code
-
+            //setup credential verification to utilize fo
             //public static string ReturnMySecret()
             //{
                 //Console.WriteLine("Provide a valid Email");
@@ -57,12 +56,39 @@ namespace p1StoreApplication1
         //return password;
         //}
 
+          
+
 
             //Syntax to sort and convert customer information to a list and send to the business class layer
             //Repeat, change to create populations for the Order and OrderHistory List               
             MyRepoClass MRC = new MyRepoClass();
             storeAppDomainClass SADC = new storeAppDomainClass(MRC);
             List<MyCustomer> NewCustomers = SADC.MembersList() ;
+                        //Exits program
+                        loopContinue = false;
+                        break;
+                    }
+                    
+                }
+                while(admin == true)
+                {
+                    //Admin Interface Enters and Updates Store Information
+                           //Store location info, Product List add store Inventory info
+
+                }
+                while (existingCustomer == true)
+                {
+                    //Existing Customer Selects store Location, Selects product from inventory list, views/edits cart, and order history.
+                }
+                while (newCustomer == true)
+                {
+                    //Enters Customer Information into Database populates Various content in cart and Order History
+                            //Creates Customer UN and P for Future Verify
+                }
+            
+            //Console.WriteLine("Hello World!");
+            // storeAppDomainClass sAD = new storeAppDomainClass();
+
 
             foreach (MyCustomer MC in NewCustomers)
             {
