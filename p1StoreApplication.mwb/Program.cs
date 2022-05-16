@@ -13,7 +13,7 @@ namespace p1StoreApplication.mwb
 
             //sign in asks for email and pasword?, and register asks for information from customer list. 
             // after sign in client can access store, store location, products, order history, and cart section.
-            input = true
+            input = true;
             while (input = true)
             {
                 Console.WriteLine("Would You like to sign up or Log in. press 1 to sign up and 2 to log in");
@@ -36,7 +36,7 @@ namespace p1StoreApplication.mwb
                 }
                 else
                 {
-                    Console.Writeline("Invalid Selection")
+                    Console.Writeline("Invalid Selection");
                 }
             }
 
@@ -48,7 +48,7 @@ namespace p1StoreApplication.mwb
             //syntax to call in the database.
             // to be in the repository section when created.
 
-            string connectionString = $"Server=tcp:cameronbrucedb.database.windows.net,1433;Initial Catalog=yourDBName;Persist Security Info=False;User ID=CameronBruceRevature1;Password={"GundamWing04"};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = $"Server=tcp:cameronbrucedb.database.windows.net,1433;Initial Catalog=yourDBName;Persist Security Info=False;User ID=CameronBruceRevature1;Password=GundamWing04;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             
             
             string myQuery1 = "SELECT  FROM  WHERE ";
