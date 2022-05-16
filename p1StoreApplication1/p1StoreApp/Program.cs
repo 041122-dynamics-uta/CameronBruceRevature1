@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using storeAppDomain;
 using storeAppModel;
@@ -64,27 +64,9 @@ namespace p1StoreApplication1
             MyRepoClass MRC = new MyRepoClass();
             storeAppDomainClass SADC = new storeAppDomainClass(MRC);
             List<MyCustomer> NewCustomers = SADC.MembersList() ;
-                        //Exits program
-                        loopContinue = false;
-                        break;
-                    }
+                      
                     
-                }
-                while(admin == true)
-                {
-                    //Admin Interface Enters and Updates Store Information
-                           //Store location info, Product List add store Inventory info
-
-                }
-                while (existingCustomer == true)
-                {
-                    //Existing Customer Selects store Location, Selects product from inventory list, views/edits cart, and order history.
-                }
-                while (newCustomer == true)
-                {
-                    //Enters Customer Information into Database populates Various content in cart and Order History
-                            //Creates Customer UN and P for Future Verify
-                }
+               
             
             //Console.WriteLine("Hello World!");
             // storeAppDomainClass sAD = new storeAppDomainClass();
