@@ -18,15 +18,19 @@ public class MyRepoClass
     {
         this._mapper = new MyMapperClass();
     }            
-    public List<MyCustomer> MyCustomerList()
+    public List<MyCustomer> MyCustomerList(string FirstName, string LastName, string Email, string MySecret)
     {
         //Query string
-        string myQuery1 = "Insert Into MyCustomer ( [MyCustomerId], [FirstName], [LastName], [Email], [MySecret]) Values ( 1, '@F', '@L', '@E', '@MyS')";
+        string myQuery1 = "Insert Into MyCustomer ( FirstName, LastName, Email, MySecret ) Values ( @F, @L, @E, @MyS )";
 
         //Sql commands. seem to have the same errors as Mark on Friday 5/14
         using (SqlConnection query1 = new SqlConnection(connectionstring))
         {
             SqlCommand command = new SqlCommand(myQuery1, query1);
+            command.Parameters.AddWithValue("@F", FirstName);
+            command.Parameters.AddWithValue("@L", LastName);
+            command.Parameters.AddWithValue("@E", Email);
+            command.Parameters.AddWithValue("@MyS", MySecret);
             command.Connection.Open(); //open the connection to the DB
             SqlDataReader results = command.ExecuteReader(); //do the query
 

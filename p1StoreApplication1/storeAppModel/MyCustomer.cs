@@ -4,7 +4,7 @@ public class MyCustomer
 
 // Customer -- everything belo wis in Customer Table with the following columns
 
-   public int MyCustomerId {get; set;} 
+    public int MyCustomerId {get; set;} 
     public string FirstName {get; set;} = "";
     public string LastName {get; set;} = "";
     public string MySecret {get; set;} = "";

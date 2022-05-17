@@ -63,7 +63,7 @@ namespace p1StoreApplication1
             //Repeat, change to create populations for the Order and OrderHistory List               
             MyRepoClass MRC = new MyRepoClass();
             storeAppDomainClass SADC = new storeAppDomainClass(MRC);
-            List<MyCustomer> NewCustomers = SADC.MembersList() ;
+            List<MyCustomer> NewCustomers = SADC.MembersList(FirstName, LastName, Email, MySecret) ;
                       
                     
                
