@@ -12,9 +12,9 @@ public MyRepoClass _repo { get; set; }
         this._repo = MRC;
     }
 
-    public List<MyCustomer> MembersList()
+     public List<MyCustomer> MembersList(string FirstName, string LastName, string Email, string MySecret)
     {
-        List<MyCustomer> MC = _repo.MyCustomerList();
+        List<MyCustomer> MC = _repo.MyCustomerList(FirstName, LastName, Email, MySecret);
         return MC;
-    }
+    } 
 }
