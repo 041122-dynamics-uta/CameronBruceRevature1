@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using storeAppDomain;
 using storeAppModel;
@@ -25,7 +25,7 @@ namespace p1StoreApplication1
             Console.WriteLine("Enter Your Secret Identifier");
             string MySecret = Console.ReadLine();
 
-            //setup credential verification to utilize fo
+            //setup credential verification to utilize following code
             //public static string ReturnMySecret()
             //{
                 //Console.WriteLine("Provide a valid Email");
@@ -74,7 +74,7 @@ namespace p1StoreApplication1
 
             foreach (MyCustomer MC in NewCustomers)
             {
-            Console.WriteLine($"The members data is Fname-{MC.FirstName}.....");
+            Console.WriteLine($"The members data is Fname-{MC.FirstName }.....");
             } 
             //Add switch case to see store Locations to select one
             //Add question to see the store Inventory list
