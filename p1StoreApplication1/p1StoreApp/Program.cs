@@ -12,19 +12,39 @@ namespace p1StoreApplication1
 {
     class Program
     {
-        static void Main(string[] args)
+        static async void Main(string[] args)
         {
-            //Get the Customers Information to setup Login        
-            Console.WriteLine("Lets Get some Information");
-            Console.WriteLine("Enter First Name");
-            string FirstName = Console.ReadLine();
-            Console.WriteLine("Enter Last Name");
-            string LastName = Console.ReadLine();
-            Console.WriteLine("Enter Your Email Address");
-            string Email = Console.ReadLine();
-            Console.WriteLine("Enter Your Secret Identifier");
-            string MySecret = Console.ReadLine();
+            Console.WriteLine("Welcome to Magnus's Potion Emporium");
+            Console.WriteLine("Please Select \n To Register Press 1 \n To Log Into Your Account 2");
+            int Option1 = Convert.ToInt32(Console.ReadLine());
+          
+            switch(Option1)
+            {
+                case 1:
+                    Console.WriteLine("Lets Get some Information");
+                    Console.WriteLine("Enter First Name");
+                    string FirstName = Console.ReadLine();
+                    Console.WriteLine("Enter Last Name");
+                    string LastName = Console.ReadLine();
+                    Console.WriteLine("Enter Your Email Address");
+                    string Email = Console.ReadLine();
+                    Console.WriteLine("Enter Your Secret Identifier");
+                    string MySecret = Console.ReadLine();
 
+                    MyRepoClass MRC = new MyRepoClass();
+                    storeAppDomainClass SADC = new storeAppDomainClass(MRC);
+                    List<MyCustomer> NewCustomers = SADC.MembersList(FirstName, LastName, Email, MySecret) ;
+                    break;
+                case 2: 
+                    Console.WriteLine("Enter your Email and Secret Identifier");
+                    string NewEmail = Console.ReadLine();
+                    string NewMySecret = Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Please Try Again");
+                    break;
+            }
+           
             //setup credential verification to utilize following code
             //public static string ReturnMySecret()
             //{
@@ -61,9 +81,6 @@ namespace p1StoreApplication1
 
             //Syntax to sort and convert customer information to a list and send to the business class layer
             //Repeat, change to create populations for the Order and OrderHistory List               
-            MyRepoClass MRC = new MyRepoClass();
-            storeAppDomainClass SADC = new storeAppDomainClass(MRC);
-            List<MyCustomer> NewCustomers = SADC.MembersList(FirstName, LastName, Email, MySecret) ;
                       
                     
                

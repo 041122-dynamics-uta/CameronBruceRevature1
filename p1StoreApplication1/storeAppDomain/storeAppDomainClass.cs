@@ -12,10 +12,24 @@ public MyRepoClass _repo { get; set; }
         this._repo = MRC;
     }
 
-    public List<MyCustomer> MembersList(string FirstName, string LastName, string Email, string MySecret)
+    public async Task<List<MyCustomer>> await MembersListAsync(string FirstName, string LastName, string Email, string MySecret)
     {
-        List<MyCustomer> MC = _repo.MyCustomerList(FirstName, LastName, Email, MySecret);
-        return MC;
+        bool CustomerExistsorNO = await _repo.uNamePwordExistsAsync(Email,MySecret);
+        
+        if (CustomerExistsorNO){
+            return null;    
+        }
+
+        else {
+
+           MyCustomer NewCustomer = await MembersListAsync(FirstName, LastName, Email, MySecret);
+           return NewCustomer;
+
+        }
+
+
+        //List<MyCustomer> MC = _repo.MyCustomerList(FirstName, LastName, Email, MySecret);
+       //return MC;
     } 
     
 }

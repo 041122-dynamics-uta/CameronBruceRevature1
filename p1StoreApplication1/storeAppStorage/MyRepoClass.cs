@@ -17,11 +17,38 @@ public class MyRepoClass
     public MyRepoClass()
     {
         this._mapper = new MyMapperClass();
-    }            
+    }  
+    public async Task<bool> UnamePwordExistsAsync(string Email, string Credentials)
+    {
+        string query = "select FirstName, LastName from Buyer where Email = '@E' and Credentials = '@C';";
+        using (SqlConnection conn = new SqlConnection(connectionstring))
+        {
+            SqlCommand command = new SqlCommand(query, conn);
+            //command.Parameters.AddWithValue("@F", FirstName);
+            //command.Parameters.AddWithValue("@L", LastName);
+            command.Parameters.AddWithValue("@C", Credentials);
+            command.Parameters.AddWithValue("@E", Email);
+            conn.Open(); //open the connection to the DB
+            SqlDataReader results = await command.ExecuteReaderAsync(); //do the query
+            conn.Close(); //close the connection to the DB
+            if (results == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+
+
+
+
     public List<MyCustomer> MyCustomerList(string FirstName, string LastName, string Email, string MySecret)
     {
         //Query string
-        string myQuery1 = "Insert Into MyCustomer ( FirstName, LastName, Email, MySecret ) Values ( @F, @L, @E, @MyS )";
+        string myQuery1 = "Insert Into MyCustomer ( FirstName, LastName, Email, MySecret ) Values ( @F, @L, @E, @MyS );";
 
         //Sql commands. seem to have the same errors as Mark on Friday 5/14
         using (SqlConnection query1 = new SqlConnection(connectionstring))
@@ -29,8 +56,8 @@ public class MyRepoClass
             SqlCommand command = new SqlCommand(myQuery1, query1);
             command.Parameters.AddWithValue("@F", FirstName);
             command.Parameters.AddWithValue("@L", LastName);
-            command.Parameters.AddWithValue("@E", Email);
             command.Parameters.AddWithValue("@MyS", MySecret);
+            command.Parameters.AddWithValue("@E", Email);
             command.Connection.Open(); //open the connection to the DB
             SqlDataReader results = command.ExecuteReader(); //do the query
 
