@@ -18,33 +18,31 @@ public class MyRepoClass
     {
         this._mapper = new MyMapperClass();
     }  
-    public async Task<bool> UnamePwordExistsAsync(string Email, string Credentials)
+    public bool uNamePwordExists(string ExistingEmail, string ExistingMySecret)
     {
-        string query = "select FirstName, LastName from Buyer where Email = '@E' and Credentials = '@C';";
+        string query = "select FirstName, LastName from MyCustomer where Email = '@E' and MySecret = '@C';";
         using (SqlConnection conn = new SqlConnection(connectionstring))
         {
             SqlCommand command = new SqlCommand(query, conn);
             //command.Parameters.AddWithValue("@F", FirstName);
             //command.Parameters.AddWithValue("@L", LastName);
-            command.Parameters.AddWithValue("@C", Credentials);
-            command.Parameters.AddWithValue("@E", Email);
+            command.Parameters.AddWithValue("@C", ExistingMySecret);
+            command.Parameters.AddWithValue("@E", ExistingEmail);
             conn.Open(); //open the connection to the DB
-            SqlDataReader results = await command.ExecuteReaderAsync(); //do the query
+            SqlDataReader results =  command.ExecuteReader(); //do the query
             conn.Close(); //close the connection to the DB
-            if (results == null)
-            {
-                return false;
-            }
-            else
+            
+            if (results.Read())
             {
                 return true;
             }
+            else
+            {
+                conn.Close(); //close the connection to the DB
+                return false;
+            }
         }
     }
-
-
-
-
     public List<MyCustomer> MyCustomerList(string FirstName, string LastName, string Email, string MySecret)
     {
         //Query string

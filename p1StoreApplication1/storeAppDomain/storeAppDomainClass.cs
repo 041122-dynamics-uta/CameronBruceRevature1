@@ -11,25 +11,35 @@ public MyRepoClass _repo { get; set; }
     {
         this._repo = MRC;
     }
-
-    public async Task<List<MyCustomer>> await MembersListAsync(string FirstName, string LastName, string Email, string MySecret)
+    public List<MyCustomer> MembersList(string FirstName, string LastName, string Email, string MySecret)
     {
-        bool CustomerExistsorNO = await _repo.uNamePwordExistsAsync(Email,MySecret);
-        
-        if (CustomerExistsorNO){
-            return null;    
-        }
-
-        else {
-
-           MyCustomer NewCustomer = await MembersListAsync(FirstName, LastName, Email, MySecret);
-           return NewCustomer;
-
-        }
-
-
-        //List<MyCustomer> MC = _repo.MyCustomerList(FirstName, LastName, Email, MySecret);
-       //return MC;
+        List<MyCustomer> MC = _repo.MyCustomerList(FirstName, LastName, Email, MySecret);
+        return MC;
+    }
+    public List<MyCustomer> uNamePwordExists(string ExistingEmail, string ExistingMySecret)
+    {
+        return null;   
+    }
+public List<MyStoreLocations> MyStoreLocationsList()
+    {
+        List<MyStoreLocations> SL = _repo.MyStoreLocationsList();
+        return SL;
+    }
+    public List<MyStoreInventory> MyStoreInventoryList()
+    {
+        List<MyStoreInventory> SI = _repo.MyStoreInventoryList();
+        return SI;
+    }
+    public List<MyCustomerOrder> MyCustomerOrderList()
+    {
+        List<MyCustomerOrder> MCO = _repo.MyCustomerOrderList();
+        return MCO;
     } 
+    public List<MyCustomerOrderHistory> MyCustomerOrderHistoryList()
+    {
+        List<MyCustomerOrderHistory> MCOH = _repo.MyCustomerOrderHistoryList();
+        return MCOH;
+    }  
+} 
     
-}
+
