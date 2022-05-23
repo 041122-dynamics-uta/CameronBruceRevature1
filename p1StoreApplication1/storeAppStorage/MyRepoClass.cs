@@ -18,6 +18,8 @@ public class MyRepoClass
     {
         this._mapper = new MyMapperClass();
     }  
+
+    //this query is supposed to extract the customers information that has the same email and secret Identifier
     public bool uNamePwordExists(string ExistingEmail, string ExistingMySecret)
     {
         string query = "select FirstName, LastName from MyCustomer where Email = '@E' and MySecret = '@C';";
@@ -45,10 +47,10 @@ public class MyRepoClass
     }
     public List<MyCustomer> MyCustomerList(string FirstName, string LastName, string Email, string MySecret)
     {
-        //Query string
+        //Query string to populate the customer information table
         string myQuery1 = "Insert Into MyCustomer ( FirstName, LastName, Email, MySecret ) Values ( @F, @L, @E, @MyS );";
 
-        //Sql commands. seem to have the same errors as Mark on Friday 5/14
+        
         using (SqlConnection query1 = new SqlConnection(connectionstring))
         {
             SqlCommand command = new SqlCommand(myQuery1, query1);
@@ -70,6 +72,7 @@ public class MyRepoClass
 
     }
     //More Sql Queries to populate and manipulate the data from the database.
+    //This query is supposed to have a insert into where all the variable come from different tables.
     public List<MyCustomerOrder> MyCustomerOrderList()
     {
         string myQuery2 = "SELECT * FROM MyCustomerOrder";
@@ -90,6 +93,7 @@ public class MyRepoClass
         }
 
     }
+    //This query is supposed to copy the data from the MyCustomerOrder
     public List<MyCustomerOrderHistory> MyCustomerOrderHistoryList()
     {
         string myQuery3 = "SELECT * FROM MyCustomerOrderHistory";
@@ -109,7 +113,8 @@ public class MyRepoClass
             return MCOH1;      
         }
 
-    }
+    }//reference to get the list of items
+    //needs to be able to utilize quantity for a calculation and randomizer to place random items into each stores marker
     public List<MyStoreInventory> MyStoreInventoryList()
     {
         string myQuery4 = "SELECT * FROM MyStoreInventory";

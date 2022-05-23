@@ -69,9 +69,9 @@ namespace p1StoreApplication1
                         Console.WriteLine("--------------------------");
                         Console.WriteLine($"City --- [{SL2.City}]");
                         Console.WriteLine("-------------------------");
-                        Console.WriteLine("Please Select your City");
-                        string SelectCity= Console.ReadLine();
                     }
+                    Console.WriteLine("Please Select your City");
+                    string SelectCity = Console.ReadLine();
                     loopContinue = true;
                     break;
                 case 2:
@@ -86,13 +86,13 @@ namespace p1StoreApplication1
                         Console.WriteLine($"Item Description --- [{SI2.ItemDescription}]");
                         Console.WriteLine($"Item Quantity --- [{SI2.ItemQuantity}]");
                         Console.WriteLine("--------------------------------------");
-                        Console.WriteLine("Please Select your Item Name");
-                        string ItemName= Console.ReadLine();
                         int ItemPrice = SI2.ItemPrice;
                         string ItemDescription = SI2.ItemDescription;
+                    }
+                        Console.WriteLine("Please Select your Item Name");
+                        string ItemName = Console.ReadLine();
                         Console.WriteLine("Enter Your Quantity");
                         int ItemQuantity = Convert.ToInt32(Console.ReadLine());
-                    }
                     loopContinue = true;
                     break;
                 case 3:
@@ -105,11 +105,12 @@ namespace p1StoreApplication1
                         Console.WriteLine($"Item Price --- [{COH2.ItemPrice}]");
                         Console.WriteLine($"Item Description --- [{COH2.ItemDescription}]");
                         Console.WriteLine($"Item Quantity --- [{COH2.Quantity}]");
-                        Console.WriteLine("Please Select your Item Name");
-                        string ItemName= Console.ReadLine();
                         int ItemPrice = COH2.ItemPrice;
-                        Console.WriteLine("Enter Your Quantity");
                     }
+                        //Console.WriteLine("Please Select your Item Name");
+                        //string NewItemName = Console.ReadLine();
+                        //Console.WriteLine("Enter Your Quantity");
+                        //int NewQuantity = Convert.ToInt32(Console.ReadLine());
                     loopContinue = true;
                     break;
 
